@@ -1,0 +1,26 @@
+Hej! Första lektionen är avklarad. Det var kul att träffa er alla, jag tror vi kommer ha en spännande och lärorik kurs tillsammans! 
+
+Första lektionen var en introduktion till HTML och CSS samt lite koncept inom webb som client, server osv. 
+
+---------------------------------------------------------------------------------------------------------------
+
+Studera först koden i html och gör uppgifterna från freecodecamp för att öva: 
+
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
+
+Studera sedan koden i CSS och gör dessa uppgifter för att öva: 
+
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Jag vill även att ni bekantar er med terminalen, öva på att navigera runt i erat filsystem, skapa mappar och filer t.ex. 
+För att vara tydlig är det inte terminalen i VSCode. Vi vill efter denna kurs ha en terminal vi använder till allt. 
+Försök även att konfigurera eran terminal så att den känns bra att jobba i, ni vill gärna kunna se t.ex vilken branch 
+ni står på om ni är i en gitmapp. 
+
+Jag har lagt en lista här i repot med terminalkommandon för några av de vanligare sakerna ni behöver kunna men också git.
+
+---------------------------------------------------------------------------------------------------------------
+
