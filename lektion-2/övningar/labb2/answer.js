@@ -57,18 +57,6 @@ console.log("Ready to begin.");
  */
 
 
-function sumRangeNumbers(minNumber, maxNumber) {
-	let sumTotal = 0;
-	for (let i = minNumber; i <= maxNumber; i++) {
-		console.log(i);
-		sumTotal += i;
-	}
-
-	return sumTotal;
-}
-
-
-ANSWER = sumRangeNumbers(22, 91);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.1", ANSWER, false);
@@ -89,28 +77,7 @@ dbwebb.assert("1.1", ANSWER, false);
 
 
 
-function fruitColor(fruit) {
-	let result = '';
-	switch(fruit) {
-		case 'banana':
-			result = 'yellow';
-			break;
-		case 'apple':
-			result = 'green';
-			break;
-		case 'kiwi':
-			result = 'green';
-			break;
-		case 'plum':
-			result = 'red';
-			break;
-	}
 
-	return result;
-}
-
-
-ANSWER = fruitColor('plum');
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.2", ANSWER, false);
@@ -129,18 +96,7 @@ dbwebb.assert("1.2", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
-function printRange(rangeStart, rangeStop) {
-	let result = '';
-	for (let i = rangeStart; i <= rangeStop; i++) {
-		result += i + ',';
-		console.log(result);
-	}
 
-	return result.slice(0, result.length -1);
-}
-
-
-ANSWER = printRange(25, 46);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.3", ANSWER, false);
@@ -159,18 +115,7 @@ dbwebb.assert("1.3", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
-function printRangeReversed(rangeStart, rangeStop) {
-	let result = '';
-	for (var i = rangeStart; i >= rangeStop; i--) {
-		result += i + ',';
-		console.log(result);
-	}
 
-	return result.slice(0, result.length -1);
-}
-
-
-ANSWER = printRangeReversed(46, 25);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.4", ANSWER, false);
@@ -196,21 +141,6 @@ dbwebb.assert("1.4", ANSWER, false);
  */
 
 
-function printAnyRange(rangeStart, rangeStop) {
-	if (rangeStart < rangeStop) {
-		return printRange(rangeStart, rangeStop);
-	}
-
-	if (rangeStart > rangeStop) {
-		return printRangeReversed(rangeStart, rangeStop);
-	}
-
-	return "rangeStart must not be eqqual to rangeStop";
-}
-
-
-ANSWER = printAnyRange(25, 46);
-
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.5", ANSWER, false);
 
@@ -228,17 +158,6 @@ dbwebb.assert("1.5", ANSWER, false);
  */
 
 
-function stringRepeat(string, repeat) {
-	let result = '';
-	for (var i = 0; i < repeat; i++) {
-		result += string;
-	}
-
-	return result;
-}
-
-
-ANSWER = stringRepeat('grey', 12);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.6", ANSWER, false);
@@ -262,16 +181,6 @@ dbwebb.assert("1.6", ANSWER, false);
 
 
 
-function inRange(rangeStart, rangeStop, value) {
-	if (value > rangeStart && value < rangeStop) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-
-ANSWER = inRange(131, 547, 434);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.7", ANSWER, false);
@@ -292,8 +201,6 @@ dbwebb.assert("1.7", ANSWER, false);
 
 
 
-ANSWER = inRange(131, 547, 636);
-
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.8", ANSWER, false);
 
@@ -310,14 +217,7 @@ dbwebb.assert("1.8", ANSWER, false);
  */
 
 
-function degreesToRadians(degrees) {
-	let radians = degrees * (Math.PI/180);
-	
-	return Math.round(radians * 10000) / 10000;
-}
 
-
-ANSWER = degreesToRadians(32);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.9", ANSWER, false);
@@ -343,22 +243,6 @@ dbwebb.assert("1.9", ANSWER, false);
  */
 
 
-function fizzBuzz(start, stop) {
-	let result = '';
-	for (var i = start; i <= stop; i++) {
-		if (i % 15 === 0) {
-			result += 'Fizz Buzz' + ',';
-		} else if (i % 3 === 0) {
-			result += 'Fizz' + ',';
-		} else if (i % 5 === 0) {
-			result += 'Buzz' + ',';
-		} else {
-			result += i + ',';
-		}
-	}
-
-	return result.slice(0, result.length - 1);
-}
 
 
 ANSWER = fizzBuzz(1, 30);
@@ -429,44 +313,7 @@ dbwebb.assert("2.1", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
-function printResult(playerTotal, dealerTotal) {
-	let playerResult = ''
-	let dealerResult = ''
 
-	if (playerTotal === 21) {
-		playerResult = 'black jack';
-	} else if (playerTotal < 21) {
-		playerResult = 'safe';
-	} else {
-		playerResult = 'busted';
-	}
-
-	if (dealerTotal === 21) {
-		dealerResult = 'black jack';
-	} else if (dealerTotal >= 17 && dealerTotal < 21) {
-		dealerResult = 'stop';
-	} else if (dealerTotal < 17) {
-		dealerResult = 'safe';
-	} else {
-		dealerResult = 'busted';
-	}
-
-	return 'Player: ' + playerResult + ', Dealer: ' + dealerResult;
-}
-
-
-let playerCard1 = 4;
-let playerCard2 = 10;
-let playerCard3 = 3;
-
-let dealerCard1 = 3;
-let dealerCard2 = 6;
-let dealerCard3 = 11;
-
-let playerTotal = playerCard1 + playerCard2 + playerCard3;
-let dealerTotal = dealerCard1 + dealerCard2 + dealerCard3;
-
-ANSWER = printResult(playerTotal, dealerTotal);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("2.2", ANSWER, false);
@@ -486,15 +333,6 @@ dbwebb.assert("2.2", ANSWER, false);
  */
 
 
-
-function calculateInterest(startMoney, years, interestRate) {
-	let interestRateInDecimal = interestRate/100 + 1;
-	let result = startMoney * Math.pow(interestRateInDecimal, years);
-
-	return Math.round(result * 10000) / 10000;
-}
-
-ANSWER = calculateInterest(745, 31, 5);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("2.3", ANSWER, false);
