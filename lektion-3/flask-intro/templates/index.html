@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<h1>POSTS</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }}</li>
+
+            {% if post.id > 2 %}
+                <li style="color: red;">{{ post.title }}</li>
+            {% else %}
+                <li style="color: blue;">{{ post.body }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}    

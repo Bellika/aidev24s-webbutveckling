@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  {% block css %}{% endblock %}
+  <title>{% block title %}Default{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <br>
+    <a href="/foo">Foo</a>
+    <br>
+    <a href="/secret">Do not click</a>
+    <br>
+    <a href="/">Home</a>
+  </nav>
+  <p>Not part of block</p>
+  {% block content %}{% endblock %}
+
+  <script src="/static/main.js"></script>
+  {% block js %}{% endblock %}
+  <footer><h3>Footer</h3></footer>
+</body>
+</html>
