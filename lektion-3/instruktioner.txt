@@ -1,0 +1,25 @@
+Denna lektion har vi haft en introduktion till flask. 
+
+Studera koden i repot och sätt sedan upp ett eget flaskprojekt för att öva. 
+
+Hitta ett öppet API som du vill prova att hämta data från. 
+Här är några exempel: 
+
+- https://polisen.se/om-polisen/om-webbplatsen/oppna-data/api-over-polisens-handelser/
+
+- https://wheretheiss.at/w/developer
+
+- https://jsonplaceholder.typicode.com/posts
+
+- https://api-ninjas.com/
+
+Börja med att utforska APIet du vill använda med Postman / Insomnia
+
+Bygg sedan logik på din server (app.py). 
+
+Bygg sedan en frontend, i detta fallet använder vi /templates i Flask och skapar våra html, css och js filer här. 
+Detta kommer bytas ut mot React längre fram i kursen. 
+
+Försök visa din data du hämtar via APIet i frontend, bygg sedan ut med fler funktioner, som filtrering t.ex. 
+
+
