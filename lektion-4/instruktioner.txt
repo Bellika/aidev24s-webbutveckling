@@ -1,0 +1,5 @@
+Denna lektion har vi byggt klart vårat API. 
+
+Som övning ska du kolla på min kod och sedan bygga klart ditt eget API med full CRUD-funktionalitet. 
+
+Bygg även "frontend" där du provar att skapa ett form med html för att posta data och spara i din backend. 

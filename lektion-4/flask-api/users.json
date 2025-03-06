@@ -18,15 +18,5 @@
         "id": 4,
         "username": "testuser",
         "password": "test123"
-    },
-    {
-        "id": 5,
-        "username": "Tomten",
-        "password": "gr\u00f6t"
-    },
-    {
-        "id": 6,
-        "username": "asd",
-        "password": "asd"
     }
 ]
