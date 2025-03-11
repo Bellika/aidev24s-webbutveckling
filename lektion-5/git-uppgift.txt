@@ -1,0 +1,55 @@
+Kollaborativ versionshantering med Git och Github, i era grupper
+
+Övning 1: Samarbete med PR (Pull request)
+Dela in er i era projektgrupper, för att träna på att versionshantera i grupp.
+Med PR kan man jobba i ett flöde där man ständigt granskar, diskuterar och justerar varandras kod innan det mergas in i main-branch. Det hjälper gruppen att skriva bättre kod som är mindre buggig, samtidigt som man lär sig ifrån varandra. Mer om PR finns här: https://guides.github.com/activities/hello-world/ 
+
+Medlem 1 skapar ett nytt repository (med filerna README.md & .gitignore), i sin github.
+Bjuder in alla medlemmar till det nyskapade repot
+Alla medlemmar hämtar det nya repot lokalt, via clone (Clone)
+Jobba nu i den nedladdade mappen
+Medlem 1 skapa filen collaboration.html där
+Lägg till den nya filen till git (Stage)
+Spara till ny version (Commit)
+Skicka dina ändringar till github repot (Push)
+Kolla att ändringarna har skett i github
+Samarbete börjar
+Se till att alla hämtar senaste versionen av githubs main-branch, lokalt. (Pull)
+Medlem 2 förgrena ut till egen branch som heter exempelvis. “feature/add_new_navbar”
+Gör en ändring i den nya filen exempelvis lägg till texten  “feature 1”, och spara. (Stage) (Commit)
+Hämta återigen githubs main i er branch, för att säkerställa att er branch har senaste uppdaterade version av githubs main. (Pull)
+Skicka upp er branch genom att pusha branchen till github repot (Push)
+I github kan ni skapa en pull request på er branch, förklara vad det är för PR samt sätt vem som skall granska er PR. Sätt även eventuella taggar för bättre översikt om vilka PR som skall behandlas, granskas, mergas osv
+Er utvalda granskare skall granska och kommentera er kod. Antingen godkänner medlemmen eller så måste det diskuteras kring eventuella justeringar
+Var ödmjuka i era diskussioner. Det viktiga är att lära sig från varandra, INTE vinna ett argument. Viktigt att ge positiv feedback varje gång ni granskar/kommenterar.
+När granskaren har godkänt, kan ni merga er PR till main.
+Radera er lokala förgrening.
+Upprepa stegen 22-30 för varje medlem, tills alla känner sig bekväma med processen. Det bästa vore om ni övar tills hela flödet och alla dess kommandon sitter i ryggmärgen, så att ni kan fokusera all er energi på att utveckla koden, istället för att haka upp er och irritera er på versionshanteringen. Övningen gynnar er när ni jobbar i projekt, då detta är flödet ni kommer jobba med när ni versionshanterar kodbasen tillsammans.
+Övning 2: Fixa en merge conflict
+Framkalla en merge conflict genom att ni ändrar på samma rad. Kom ihåg att alltid hämta senaste versionen från det avlägsna main (git pull) innan ni skickar till det avlägsna repot (git push).
+
+Alla hämtar senaste versionen av github projektet (Pull)
+Alla skapar en egen branch för att jobba på en specifik feature
+Alla ändrar på samma fil, samma rad. 
+Sparar (Stage) (Commit)
+Medlem 1 hämtar senaste versionen av main (Pull)
+Medlem 1 skickar upp sin branch (Push)
+Skapa en ny PR, granska och merga till main i github
+Medlem 2 hämtar senaste versionen av main (Pull)
+MERGE CONFLICT
+Diskutera och kom överens om vilken kod som skall behållas, spara och sedan skicka till github (Stage) (Commit) (Push)
+Skapa en ny PR, granska och merga till main i github
+Medlem 3 hämtar senaste versionen av main (Pull)
+MERGE CONFLICT
+Diskutera och kom överens om vilken kod som skall behållas, spara och sedan skicka till github (Stage) (Commit) (Push)
+Skapa en ny PR, granska och merga till main i github
+Repetera detta tills ni känner er säkra med merge conflicts.
+
+
+Övning 3: Publicera ert repository i github pages
+ Publicera ert repository i github pages: https://pages.github.com/
+	
+
+
+
+
