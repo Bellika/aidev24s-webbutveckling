@@ -1,0 +1,7 @@
+Denna lektion har vi kopplat upp vårat API mot en riktig databas. 
+
+Vi körde med mysql på lektionen men prova gärna med postgresql eller mongoDB. 
+
+Ta ditt API från förra veckan och bygg om det så data sparas i databsen istället för en JSON-fil. 
+
+Det finns även en uppgift i sammarbete med git som ni kan göra i grupp.
