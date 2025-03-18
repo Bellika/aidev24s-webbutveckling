@@ -35,10 +35,10 @@ def generate_backstory(name, class_type):
 def create_character(data):
   class_type = data['class_type']
   stats = {
-    "Barbarian": {"strength": 10, "agility": 5, "intelligence": 3},
-    "Wizard": {"strength": 3, "agility": 5, "intelligence": 10},
-    "Archer": {"strength": 6, "agility": 9, "intelligence": 5},
-    "Paladin": {"strength": 8, "agility": 6, "intelligence": 6}
+    "Barbarian": {"strength": 10, "agility": 5, "intelligence": 3, "defence": 8, "health": 130},
+    "Wizard": {"strength": 3, "agility": 5, "intelligence": 10, "defence": 4, "health": 80},
+    "Archer": {"strength": 6, "agility": 9, "intelligence": 5, "defence": 5, "health": 100},
+    "Paladin": {"strength": 8, "agility": 6, "intelligence": 6, "defence": 10, "health": 120}
   }
 
   if class_type not in stats:
@@ -51,6 +51,7 @@ def create_character(data):
   new_char = Character(
         name=data['name'],
         class_type=class_type,
+        health=stats['health'],
         strength=stats['strength'],
         agility=stats['agility'],
         intelligence=stats['intelligence'],
@@ -66,7 +67,7 @@ def create_character(data):
 def generate_image(backstory):
   response = openai.images.generate(
     model="dall-e-3",
-    prompt="Make an image of the character told about in this story, the setting is dark-fantasy: {backstory}. The image should only be of the character holding some type of weapon. Make it in the style of a 90s videogame.",
+    prompt=f"Make an image of the character told about in this story, the setting is dark-fantasy: {backstory}. The image should only be of the character holding some type of weapon. Make it in the style of a 90s videogame. There should be no text in the image",
     size="1024x1024",
     quality="standard",
     n=1,

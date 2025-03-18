@@ -15,6 +15,7 @@ def create_character_route():
       "message": "Character created!",
       "character_id": new_char.id,
       "name": new_char.name,
+      "health": new_char.health,
       "class_type": new_char.class_type,
       "strength": new_char.strength,
       "agility": new_char.agility,
