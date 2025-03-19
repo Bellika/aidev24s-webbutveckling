@@ -4,6 +4,7 @@ import Menu from "./pages/Menu"
 import CreateCharacter from "./pages/CreateCharacter"
 import NewGame from './pages/NewGame'
 import Game from "./pages/Game"
+import Riddle from "./pages/Riddle"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route path="/new-game" element={<NewGame />} />
             <Route path="/create-character" element={<CreateCharacter />} />
             <Route path="/game" element={<Game />} />
+            <Route path="/riddle" element={<Riddle />} />
           </Routes>
         </Router>
       </CharacterProvider>
