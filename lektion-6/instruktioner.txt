@@ -1,0 +1,5 @@
+Denna lektion hade vi en introduktion till React. Vi lärde oss om statehantering
+react router och skapade ett form där vi kunde posta till backend. 
+
+Bygg vidare på din backend du skapade förra lektionen genom att koppla på en 
+react frontend och gör requests mot din backend istälet för att använda Postman.

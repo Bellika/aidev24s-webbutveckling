@@ -1,0 +1,5 @@
+Detta är första delen i våran fullstack app. Vi började bygga backenden till vårat spel doomkeep för 
+att sammanfatta och repetera koncept inom kursen. Ni fick även inlämningsuppgiften som ligger uppe på 
+learnpoint samt i en textfil här i repot. 
+
+Glöm inte att ni ska vara 4 medlemmar i en grupp och skicka gruppnamn samt medlemmar till mig. 
