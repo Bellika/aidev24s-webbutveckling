@@ -1,11 +1,15 @@
 import React, { useState } from "react"
 import { getCharacter } from "../services/characterApi"
+import { useCharacter } from "../context/CharacterContext"
+import { useNavigate } from "react-router-dom"
 
 export default function NewGame() {
+  const { setSelectedCharacter } = useCharacter()
   const [character, setCharacter] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [characterName, setCharacterName] = useState('')
+  const navigate = useNavigate()
 
   const fetchCharacter = async () => {
     if (!characterName) return 
@@ -16,6 +20,8 @@ export default function NewGame() {
     try {
       const data = await getCharacter({name: characterName})
       setCharacter(data)
+      setSelectedCharacter(data)
+      navigate('/game')
     } catch (error) {
       setError(error, 'Could not fetch character')
     } finally {

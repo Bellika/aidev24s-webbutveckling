@@ -28,7 +28,7 @@ def get_character_by_id_or_name(character_id=None, name=None):
       'image_url': character.image_url
     }, None
   else:
-    return None, 'User not found'
+    return None, 'Character not found'
 
 def generate_backstory(name, class_type):
   prompt = f"""

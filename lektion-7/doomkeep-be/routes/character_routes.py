@@ -13,7 +13,7 @@ def get_character():
    if error:
     return jsonify({'error': error}), 404
    else:
-    return jsonify({'user': character_data}), 200
+    return jsonify({'character': character_data}), 200
 
 @character_routes.route('/create-character', methods=['POST'])
 def create_character_route():
