@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+:root {
+  --background-color: #0d0d0d;
+  --text-color: #d4af37; 
+  --accent-color: #8b0000; 
+  --border-color: #4c4c4c;
+  --shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Uncial Antiqua', serif;
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+

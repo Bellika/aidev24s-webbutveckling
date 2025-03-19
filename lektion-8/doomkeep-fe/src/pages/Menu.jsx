@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styles from '../styles/Menu.module.css'
+import LinkButton from '../components/LinkButton'
 
 const Menu = () => {
 
@@ -8,8 +8,8 @@ const Menu = () => {
     <div className={styles.container}>
       <h1>DOOMKEEP</h1>
       <nav className={styles.mainMenu}>
-        <Link to='new-game'>New Game</Link>
-        <Link to='create-character'>Create Character</Link>
+        <LinkButton to="/new-game">New Game</LinkButton>
+        <LinkButton to='/create-character'>Create Character</LinkButton>
       </nav>
     </div>
   )

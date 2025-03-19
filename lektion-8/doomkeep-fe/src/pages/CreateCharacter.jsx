@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import TextInput from '../components/TextInput'
 import { createCharacter } from '../services/characterApi'
+import Button from '../components/Button'
+import styles from '../styles/CreateCharacter.module.css'
 
 const CreateCharacter = () => {
   const {
@@ -27,7 +29,7 @@ const CreateCharacter = () => {
   }
 
   return (
-    <div className="form-container">
+    <div className={styles.formContainer}>
     <h2>Create Character</h2>
     {serverMessage && (
       <p>{serverMessage.text}</p>
@@ -47,7 +49,7 @@ const CreateCharacter = () => {
         registerOptions={{ required: "Class is required" }}
         error={errors.password}
       />
-      <button type="submit">Create Character</button>
+      <Button type="submit">Create Character</Button>
     </form>
   </div>
   )
