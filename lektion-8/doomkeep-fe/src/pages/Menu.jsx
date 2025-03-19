@@ -1,24 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import CharacterSheet from '../components/CharacterSheet'
+import styles from '../styles/Menu.module.css'
 
 const Menu = () => {
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   return (
-    <div>
-      <nav>
-        <p>Hej</p>
-        <Link to='/create-character'></Link>
+    <div className={styles.container}>
+      <h1>DOOMKEEP</h1>
+      <nav className={styles.mainMenu}>
+        <Link to='new-game'>New Game</Link>
+        <Link to='create-character'>Create Character</Link>
       </nav>
-      <button onClick={() => setIsSheetOpen(true)}>Show Character</button>
-
-      <CharacterSheet
-        characterId={1}
-        characterName={"Markus"}
-        isOpen={isSheetOpen}
-        onClose={() => setIsSheetOpen(false)}
-      />
     </div>
   )
 }
