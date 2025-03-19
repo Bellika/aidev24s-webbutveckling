@@ -1,7 +1,19 @@
 from flask import Blueprint, request, jsonify
-from controllers.character_controller import create_character
+from controllers.character_controller import create_character, get_character_by_id_or_name
 
 character_routes = Blueprint('character_routes', __name__)
+
+@character_routes.route('/get-character', methods=['GET'])
+def get_character():
+   character_id = request.args.get('id')
+   name = request.args.get('name')
+
+   character_data, error = get_character_by_id_or_name(character_id=character_id, name=name)
+
+   if error:
+    return jsonify({'error': error}), 404
+   else:
+    return jsonify({'user': character_data}), 200
 
 @character_routes.route('/create-character', methods=['POST'])
 def create_character_route():
@@ -22,4 +34,4 @@ def create_character_route():
       "intelligence": new_char.intelligence,
       "backstory": new_char.backstory,
       "image_url": new_char.image_url
-  })
+  }), 201

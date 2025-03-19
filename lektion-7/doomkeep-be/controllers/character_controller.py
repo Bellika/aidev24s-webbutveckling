@@ -7,6 +7,29 @@ load_dotenv()
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
+def get_character_by_id_or_name(character_id=None, name=None):
+  if character_id:
+    character = Character.query.filter_by(id=character_id).first()
+  elif name:
+    character = Character.query.filter_by(name=name).first()
+  else:
+    return None, 'Character not found'
+  
+  if character:
+    return {
+      'id': character.id,
+      'name': character.name,
+      'class_type': character.class_type,
+      'health': character.health,
+      'strength': character.strength,
+      'agility': character.agility,
+      'intelligence': character.intelligence,
+      'backstory': character.backstory,
+      'image_url': character.image_url
+    }, None
+  else:
+    return None, 'User not found'
+
 def generate_backstory(name, class_type):
   prompt = f"""
     Create a dark fantasy backstory for a character named {name},
