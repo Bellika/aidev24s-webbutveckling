@@ -1,0 +1,3 @@
+Denna lektion byggde vi vidare på vår fullstack app. Vi startade ett React projekt och satte upp struktur, 
+detta blev en repetition. Vi kollade mer på komponenter och hur dessa kan användas, kolla Button.jsx t.ex.
+Vi gick igenom modulär css samt useContext för att kunna komma åt vår character över hela appen. 
