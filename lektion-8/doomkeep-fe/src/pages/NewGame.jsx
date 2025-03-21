@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { getCharacter } from "../services/characterApi"
 import { useCharacter } from "../context/CharacterContext"
 import { useNavigate } from "react-router-dom"
+import Button from '../components/Button'
 
 export default function NewGame() {
   const { setSelectedCharacter } = useCharacter()
@@ -42,7 +43,7 @@ export default function NewGame() {
           value={characterName}
           onChange={(e) => setCharacterName(e.target.value)}
         />
-        <button onClick={handleSearchClick}>Search</button>
+        <Button onClick={handleSearchClick}>Search</Button>
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {character && (

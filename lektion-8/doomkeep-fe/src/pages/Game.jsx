@@ -3,15 +3,14 @@ import { useCharacter } from "../context/CharacterContext";
 import { useNavigate } from "react-router-dom"
 
 const Game = () => {
-    const { character } = useCharacter(); // Hämta karaktären från Context
+    const { character } = useCharacter(); 
     const navigate = useNavigate()
 
     if (!character) {
-        return <div>Please select a character first!</div>; // Om ingen karaktär finns, visa meddelande
+        return <div>Please select a character first!</div>; 
     }
 
     const startRiddle = () => {
-        // Navigera till Riddle-sidan. Eftersom vi nu använder contexten, behöver vi inte skicka namn och klass via URL.
         navigate("/riddle");
       };
 
@@ -20,6 +19,7 @@ const Game = () => {
             <h1>Game Start!</h1>
             <button onClick={startRiddle}>Continue</button>
             <h2>Your Character: {character.name}</h2>
+            {character.image_url && <img src={character.image_url} alt="Character" style={{ width: "200px", borderRadius: "8px" }} />}
             <p><strong>Class:</strong> {character.class_type}</p>
             <p><strong>Health:</strong> {character.health}</p>
             <p><strong>Strength:</strong> {character.strength}</p>

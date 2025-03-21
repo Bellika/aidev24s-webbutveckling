@@ -8,7 +8,6 @@ load_dotenv()
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-import openai
 
 def generate_npc_and_riddle(character_name, class_type):
 
