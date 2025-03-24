@@ -5,6 +5,7 @@ from routes.character_routes import character_routes
 from routes.enemy_routes import enemy_routes
 from routes.npc_riddle_routes import npc_riddle_routes
 from routes.user_routes import user_routes
+from routes.auth_routes import auth_routes
 
 app = Flask(__name__)
 CORS(app)
@@ -15,6 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
+app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(user_routes, url_prefix='/api/user')
 app.register_blueprint(character_routes,  url_prefix='/api')
 app.register_blueprint(enemy_routes, url_prefix='/api')
