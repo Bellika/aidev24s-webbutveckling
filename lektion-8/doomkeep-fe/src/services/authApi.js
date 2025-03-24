@@ -9,3 +9,12 @@ export const login = async (userData) => {
     throw error    
   } 
 }
+
+export const logout = async () => {
+  try {
+    const response = await axiosInstance.post('/auth/logout')
+    console.log('Logged out successfully', response);
+  } catch (error) {
+    console.error('Error logging out:', error)
+  }
+}

@@ -34,7 +34,6 @@ const Login = () => {
     navigate("/");
   };
 
-
   return (
     <div>
     <h2>Login</h2>
