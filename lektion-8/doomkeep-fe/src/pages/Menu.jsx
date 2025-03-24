@@ -10,6 +10,7 @@ const Menu = () => {
       <nav className={styles.mainMenu}>
         <LinkButton to="/new-game">New Game</LinkButton>
         <LinkButton to='/create-character'>Create Character</LinkButton>
+        <LinkButton to='/login'>Login</LinkButton>
       </nav>
     </div>
   )

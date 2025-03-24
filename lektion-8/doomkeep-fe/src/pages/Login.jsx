@@ -1,26 +1,27 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import TextInput from '../components/TextInput'
-import { createCharacter } from '../services/characterApi'
 import Button from '../components/Button'
-import styles from '../styles/CreateCharacter.module.css'
+import { login } from '../services/authApi'
+import { useNavigate } from 'react-router-dom'
 import LinkButton from '../components/LinkButton'
 
-const CreateCharacter = () => {
+const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
-  const [serverMessage, setServerMessage] = useState("")
+  const [serverMessage, setServerMessage] = useState('')
+  const navigate = useNavigate()
 
   const onSubmit = async (data) => {
+    
     try {
-      const response = await createCharacter(data)
-      setServerMessage({ type: "success", text: response.message })
-      reset()
+      const response = await login(data)
+      setServerMessage({ type: 'sucess', text: response.message })
+      navMainMenu()
     } catch (error) {
       setServerMessage({
         type: "error",
@@ -29,32 +30,38 @@ const CreateCharacter = () => {
     }
   }
 
+  const navMainMenu = () => {
+    navigate("/");
+  };
+
+
   return (
-    <div className={styles.formContainer}>
-    <h2>Create Character</h2>
+    <div>
+    <h2>Login</h2>
     {serverMessage && (
       <p>{serverMessage.text}</p>
     )}
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextInput
-        name="name"
-        label="Name"
+        name="username"
+        label="Username"
         register={register}
-        registerOptions={{ required: "Name is required" }}
+        registerOptions={{ required: "Username is required" }}
         error={errors.username}
       />
       <TextInput
-        name="class_type"
-        label="Class"
+        type='password'
+        name="password"
+        label="Password"
         register={register}
-        registerOptions={{ required: "Class is required" }}
+        registerOptions={{ required: "Password is required" }}
         error={errors.password}
       />
-      <Button type="submit">Create Character</Button>
+      <Button type="submit">Login</Button>
     </form>
     <LinkButton to='/'>Main Menu</LinkButton>
   </div>
   )
 }
 
-export default CreateCharacter
+export default Login
