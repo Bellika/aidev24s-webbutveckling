@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request, make_response
 from controllers.auth_controller import authenticate_user, verify_jwt
+from datetime import datetime, timedelta
 
 auth_routes = Blueprint('auth', __name__)
 
@@ -16,14 +17,14 @@ def login():
     return jsonify({'error': error}), 401
   
   response = make_response(jsonify({'message': 'Login successful'}))
-  response.set_cookie('token', token, httponly=True, samesite='Lax')
+  response.set_cookie('token', token, httponly=True, samesite='Lax', secure=False)
 
   return response, 200
 
 @auth_routes.route('/logout', methods=['POST'])
 def logout():
   response = make_response(jsonify({'message': 'Logged out'}))
-  response.set_cookie('token', '', expires=0)
+  response.set_cookie('token', '', expires=datetime.utcnow() - timedelta(seconds=3600), httponly=True, secure=False, path='/')
   return response, 200
 
 @auth_routes.route('/me', methods=['GET'])

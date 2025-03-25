@@ -17,7 +17,6 @@ const Login = () => {
   const navigate = useNavigate()
 
   const onSubmit = async (data) => {
-    
     try {
       const response = await login(data)
       setServerMessage({ type: 'sucess', text: response.message })

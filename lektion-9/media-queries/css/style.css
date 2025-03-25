@@ -1,0 +1,86 @@
+header,
+main,
+aside,
+footer {
+    border: 1px solid #333;
+    min-height: 100px;
+    /* margin-bottom: 10px; */
+}
+
+/* 
+ * Desktop-first
+ */
+
+/* Breda desktop skärmar */
+
+#container {
+    margin: 20px auto;
+    width: 960px;
+}
+
+/* Mindre desktop skärmar */
+/* the latter declaration overrites the previous one*/
+@media screen and (max-width: 960px) {
+    #container {
+        width: 700px; 
+    }
+    header {
+        background-color: blue;
+    }
+}
+
+/* Tablet skärmar */
+@media screen and (max-width: 700px) {
+    #container {
+        width: 500px;
+    }
+}
+
+/* mobil skärmar */
+@media screen and (max-width: 500px) {
+    #container {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    #container {
+        background-color: pink;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    body {
+        background-color: yellowgreen;
+    }
+}
+
+
+/* 
+ * Mobile-first
+ */
+
+/* Mobil skärmar */
+
+/* 
+@media only screen and (orientation: landscape) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    img {
+        width: 300px;
+        height: auto;
+        float: left;
+    }
+} */
+

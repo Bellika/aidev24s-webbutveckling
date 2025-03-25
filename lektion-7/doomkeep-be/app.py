@@ -8,7 +8,7 @@ from routes.user_routes import user_routes
 from routes.auth_routes import auth_routes
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 app.secret_key = 'secret-key'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = get_database_uri()
