@@ -45,6 +45,10 @@ jobs:
         run: |
           echo "MYSQL_URL=mysql://testuser:testpassword@127.0.0.1:3306/testdb" >> $GITHUB_ENV
 
+      - name: Install MySQL Connector
+        run: | 
+          pip install mysql-connector-python
+
       - name: Run database setup script
         working-directory: lektion-7/doomkeep-be
         run: | 
