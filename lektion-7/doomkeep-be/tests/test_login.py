@@ -12,7 +12,7 @@ def client():
 def test_login(client):
     response = client.post(
         '/api/auth/login',
-        data=json.dumps({'username': 'Markus', 'password': 'password'}),
+        data=json.dumps({'username': 'testuser', 'password': 'password'}),
         content_type='application/json',
     )
     assert response.status_code == 200
