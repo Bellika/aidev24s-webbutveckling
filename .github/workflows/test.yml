@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: lektion-7/doomkeep-be
-        run:
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
