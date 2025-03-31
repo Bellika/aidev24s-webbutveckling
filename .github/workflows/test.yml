@@ -44,7 +44,7 @@ jobs:
       - name: Run database setup script
         working-directory: lektion-7/doomkeep-be
         run: | 
-        python create_db.py
+          python create_db.py
 
       - name: Create test user
         working-directory: lektion-7/doomkeep-be
