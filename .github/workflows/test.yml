@@ -41,10 +41,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create database tables
+      - name: Run database setup script
         working-directory: lektion-7/doomkeep-be
-        run: |
-          python -c "from app import db, create_app; app = create_app(); with app.app_context(): db.create_all()"
+        run: | 
+        python create_db.py
 
       - name: Create test user
         working-directory: lektion-7/doomkeep-be
