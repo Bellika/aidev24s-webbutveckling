@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
   backend-tests:
     name: Run Backend Tests
@@ -40,6 +40,7 @@ jobs:
 
       - name: Install dependencies
         run:
+          cd lektion-7/doomkeep-be
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -47,15 +48,18 @@ jobs:
         env:
           DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
         run: 
+          cd lektion-7/doomkeep-be
           flask db upgrade
 
-      - name: ➕ Create test user
+      - name: Create test user
         env:
           DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
-        run: |
-          python scripts/create_test_user.py  # Skapa en testanvändare
-
-      - name: 🧪 Run pytest
+        run:
+          cd lektion-7/doomkeep-be
+          python scripts/create_test_user.py 
+      - name: Run pytest
         env:
           DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
-        run: pytest --maxfail=5 --disable-warnings
+        run: 
+          cd lektion-7/doomkeep-be
+          pytest --maxfail=5 --disable-warnings
