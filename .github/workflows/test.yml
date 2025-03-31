@@ -59,4 +59,4 @@ jobs:
         env:
           MYSQL_URL: mysql+mysqlconnector://testuser:testpassword@127.0.0.1:3306/testdb
         run: 
-          pytest --maxfail=5 --disable-warnings
+          PYTHONPATH=$(pwd) pytest --maxfail=5 --disable-warnings
