@@ -43,7 +43,8 @@ jobs:
 
       - name: Create database tables
         working-directory: lektion-7/doomkeep-be
-        run: python -c "from app import db, create_app; app = create_app(); with app.app_context(): db.create_all()"
+        runm: |
+          python -c "from app import db, create_app; app = create_app(); with app.app_context(): db.create_all()"
 
       - name: Create test user
         working-directory: lektion-7/doomkeep-be
