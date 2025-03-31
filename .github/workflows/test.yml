@@ -41,6 +41,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set environment variables
+        run: |
+          echo "MYSQL_URL=mysql://testuser:testpassword@127.0.0.1:3306/testdb" >> $GITHUB_ENV
+
       - name: Run database setup script
         working-directory: lektion-7/doomkeep-be
         run: | 
