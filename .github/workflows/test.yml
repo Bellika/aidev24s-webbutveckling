@@ -44,20 +44,20 @@ jobs:
       - name: Set up test database
         working-directory: lektion-7/doomkeep-be
         env:
-          DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
+          MYSQL_URL: mysql+mysqlconnector://testuser:testpassword@127.0.0.1:3306/testdb
         run: 
           flask db upgrade
 
       - name: Create test user
         working-directory: lektion-7/doomkeep-be
         env:
-          DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
+          MYSQL_URL: mysql+mysqlconnector://testuser:testpassword@127.0.0.1:3306/testdb
         run:
           python scripts/create_test_user.py 
 
       - name: Run pytest
         working-directory: lektion-7/doomkeep-be
         env:
-          DATABASE_URL: mysql://testuser:testpassword@127.0.0.1:3306/testdb
+          MYSQL_URL: mysql+mysqlconnector://testuser:testpassword@127.0.0.1:3306/testdb
         run: 
           pytest --maxfail=5 --disable-warnings
