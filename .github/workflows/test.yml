@@ -41,12 +41,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set up test database
+      - name: Create database tables
         working-directory: lektion-7/doomkeep-be
-        env:
-          MYSQL_URL: mysql+mysqlconnector://testuser:testpassword@127.0.0.1:3306/testdb
-        run: 
-          flask db upgrade
+        run: python -c "from app import db, create_app; app = create_app(); with app.app_context(): db.create_all()"
 
       - name: Create test user
         working-directory: lektion-7/doomkeep-be
