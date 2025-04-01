@@ -7,4 +7,4 @@ load_dotenv()
 db = SQLAlchemy()
 
 def get_database_uri():
-  return os.getenv('MYSQL_URL')
+  return os.getenv('MYSQL_URL').replace('mysql://', 'mysql+mysqlconnector://')
